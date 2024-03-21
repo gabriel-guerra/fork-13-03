@@ -10,4 +10,12 @@ export class BookService {
         const findedBook = await bookModel.findById(id)
         return findedBook
     }
+
+    async deleteById(id: any){
+        return bookModel.deleteOne({_id: id});
+    }
+
+    async updateById(id: any, book: any){
+        return bookModel.findByIdAndUpdate(id, book)
+    }
 }
